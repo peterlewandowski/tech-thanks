@@ -9,5 +9,9 @@ export const getGivers = async () => {
 export const getThisGiver = async (address) => {
   const client = getClient();
   const giverCall = await client.get("/givers?address="+ address);
-  return giverCall.data;
+  if (giverCall.data.length == 0) {
+    return {};
+  } else {
+    return giverCall.data[0];
+  }
 }
