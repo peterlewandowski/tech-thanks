@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Hero from "../components/home/Hero";
 import Main from "../components/home/Main";
 import Footer from "../components/common/Footer";
@@ -11,9 +11,6 @@ const Home = () => {
       <Hero />
       <Main />
       <Footer />
-      <div>
-        THIS IS HOME
-      </div>
     </>
   );
 };
