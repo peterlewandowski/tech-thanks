@@ -1,11 +1,3 @@
-import React from 'react';
-
-const ThankerAccount = () => {
-    return (
-        <div>
-            THANKER ACCOUNT
-        </div>
-    );
+export default function ThankerAccount() {
+  return <div>ThankerAccount</div>;
 }
-
-export default ThankerAccount;
