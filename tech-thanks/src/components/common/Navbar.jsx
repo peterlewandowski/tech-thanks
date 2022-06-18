@@ -71,7 +71,6 @@ console.log("handleClickLogin")
           flexDirection: "row",
           justifyContent: "space-between",
         }}
-<<<<<<< HEAD
       >
         <div>
           <div>LOGO</div>
@@ -84,17 +83,8 @@ console.log("handleClickLogin")
             alt=""
           />
         </div>
-        <div>{navButtons(user)}</div>
+        <div>{navButtons(user.address)}</div>
       </nav>
-=======
-        // src={LogoImage}
-        onClick={() => navigate("/")}
-        alt=""
-      />
-    </div>
-    <div>{navButtons(user.address)}</div>
-  </nav>
->>>>>>> 9d940a8c67ca5b3dc200a79bd8f7e10f9b5bccfe
     </>
   );
 }
