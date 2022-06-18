@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 // import MenuItem from "@mui/material/MenuItem";
 // import MenuIcon from "@mui/icons-material/Menu";
 import { UserContext } from "../context/UserContext";
+import { getThisGiver } from "../services/givers";
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -26,8 +27,15 @@ export default function Navbar() {
     setAnchorEl(null);
   };
 
-  const handleClickLogin = () => {
-    navigate("/MyAccount");
+  const handleClickLogin = async () => {
+console.log("handleClickLogin")
+  // from the blockchain signature find out who the address of this user is. 
+  // fake it for now
+  const address = "1234";
+  const giverProfile =  await getThisGiver(address);
+  console.log("giverProfile",giverProfile)
+  setUser(giverProfile)
+    navigate("/thanker");
   };
 
   const handleLogout = () => {
@@ -63,6 +71,7 @@ export default function Navbar() {
           flexDirection: "row",
           justifyContent: "space-between",
         }}
+<<<<<<< HEAD
       >
         <div>
           <div>LOGO</div>
@@ -77,6 +86,15 @@ export default function Navbar() {
         </div>
         <div>{navButtons(user)}</div>
       </nav>
+=======
+        // src={LogoImage}
+        onClick={() => navigate("/")}
+        alt=""
+      />
+    </div>
+    <div>{navButtons(user.address)}</div>
+  </nav>
+>>>>>>> 9d940a8c67ca5b3dc200a79bd8f7e10f9b5bccfe
     </>
   );
 }
