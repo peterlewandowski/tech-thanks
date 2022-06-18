@@ -1,0 +1,18 @@
+{
+    "leaders": [
+        {"name": "todd albert","email": "todd@bocacode.com","thankcoins": 54},
+        {"name": "nikki ","email": "todd@bocacode.com","thankcoins": 54},
+        {"name": "todd albert","email": "todd@bocacode.com","thankcoins": 54},
+        {"name": "todd albert","email": "todd@bocacode.com","thankcoins": 54}
+    ],
+    "givers": [
+        {"address": "1234", "thankcoins": 5},
+        {"address": "1234", "thankcoins": 5},
+        {"address": "1234", "thankcoins": 5}
+    ],
+    "videos": [
+        {"title": "deploying on react ", "url": "https://www.youtube.com/watch?v=e-IfT5CI-Gw"},
+        {"title": "How to mint on near", "url": "https://www.youtube.com/watch?v=Rt_cmIq12lo"},
+        {"title": "near 101 ", "url": "https://youtu.be/m6LJUpPPHoE?t=2365"}
+    ]
+}
