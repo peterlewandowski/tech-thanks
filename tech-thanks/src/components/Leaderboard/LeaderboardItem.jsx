@@ -4,7 +4,7 @@ export default function LeaderboardItem({ name, email, thankcoins }) {
     <Box sx={{ display: "flex", justifyContent: "space-between" }}>
       <Typography>{name}</Typography>
       <Typography>{email}</Typography>
-      <Typography>{thankcoins}</Typography>
+      <Typography>{thankcoins}⭐️</Typography>
     </Box>
   );
 }
