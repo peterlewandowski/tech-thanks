@@ -1,14 +1,14 @@
 {
-    "leaders": [
+    "leaderboard": [
         {"name": "todd albert","email": "todd@bocacode.com","thankcoins": 54},
         {"name": "nikki ","email": "todd@bocacode.com","thankcoins": 54},
         {"name": "todd albert","email": "todd@bocacode.com","thankcoins": 54},
         {"name": "todd albert","email": "todd@bocacode.com","thankcoins": 54}
     ],
     "givers": [
-        {"address": "1234", "thankcoins": 5},
-        {"address": "1234", "thankcoins": 5},
-        {"address": "1234", "thankcoins": 5}
+        {"address": "1234", "thankcoins": 5, "history": [{"title": "Gave to Todd Alber", "amount": 10, "date": "1/2/2022"},{"title": "Gave to Nikki ", "amount": 5, "date": "3/23/2022"},{"title": "Gave to Zack", "amount": 13, "date": "422/2022"}]},
+        {"address": "3333", "thankcoins": 5, "history": [{"title": "Gave to Todd Alber", "amount": 10, "date": "1/2/2022"},{"title": "Gave to Nikki ", "amount": 5, "date": "3/23/2022"},{"title": "Gave to Zack", "amount": 13, "date": "422/2022"}]},
+        {"address": "4444", "thankcoins": 5, "history": [{"title": "Gave to Todd Alber", "amount": 10, "date": "1/2/2022"},{"title": "Gave to Nikki ", "amount": 5, "date": "3/23/2022"},{"title": "Gave to Zack", "amount": 13, "date": "422/2022"}]}}
     ],
     "videos": [
         {"title": "deploying on react ", "url": "https://www.youtube.com/watch?v=e-IfT5CI-Gw"},
