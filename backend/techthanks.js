@@ -1,5 +1,4 @@
 require('dotenv').config();
-const fetch = require("node-fetch")
 const http = require("http"); // standard http server
 const express = require("express"); // express library
 const cors = require('cors'); // cors middleware to have a great API experience
