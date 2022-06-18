@@ -8,6 +8,7 @@ import {
 // import { ThemeProvider } from "@emotion/react";
 import Home from "./scenes/Home";
 import ThankerAccount from "./scenes/ThankerAccount";
+import ThankerSend from "./scenes/ThankerSend";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/thanker" element={<ThankerAccount />} />
+      <Route path="/send" element={<ThankerSend />} />
       </Routes>
     </Router>
   );
