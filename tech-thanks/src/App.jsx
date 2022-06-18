@@ -8,6 +8,7 @@ import {
 import Home from "./scenes/Home";
 import ThankerAccount from "./scenes/ThankerAccount";
 import { UserContextProvider } from "./components/context/UserContext";
+import ThankerSend from "./scenes/ThankerSend";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/thanker" element={<ThankerAccount />} />
+      <Route path="/send" element={<ThankerSend />} />
       </Routes>
     </Router>
     </UserContextProvider>
