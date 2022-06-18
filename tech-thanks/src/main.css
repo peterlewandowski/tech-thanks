@@ -12,3 +12,17 @@ body {
       monospace;
   }
   
+
+  #starSelection {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+  }
+
+  .startChoose {
+    flex: 0 0 20%;
+    font-size:5em;
+  }
+  .startChoose:checked ~ .control-me::after {
+    content: "😩";
+}
