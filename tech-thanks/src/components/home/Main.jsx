@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
+import { useNavigate } from "react-router-dom";
 import Leaderboard from "../Leaderboard/Leaderboard";
 
 function Main() {
