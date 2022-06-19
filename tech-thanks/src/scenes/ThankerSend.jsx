@@ -41,7 +41,6 @@ useEffect( () => {
             <h2>Let's thank that Mentor that got you into tech</h2>
             <div id="whowethank">Who are we thanking:    <Input placeholder="Their email" onChange={handleEmail}  /></div>
             <div id="starSelection">
-            user.thankcoins : {user.thankcoins }
             { user.thankcoins  == 0 ? 
                 <div>No stars to give today. wait until tomorrow</div>
             : ""
