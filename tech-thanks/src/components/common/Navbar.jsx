@@ -1,3 +1,4 @@
+import 'regenerator-runtime/runtime'
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
@@ -9,6 +10,9 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import { UserContext } from "../context/UserContext";
 import { getThisGiver } from "../services/givers";
+import {login, logout, get_greeting, set_greeting} from '../services/near/utils'
+import getConfig from '../services/near/config'
+
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -47,7 +51,7 @@ export default function Navbar() {
     } else {
       return (
         <span>
-          <Button color="inherit" type="primary" onClick={handleClickLogin}>
+          <Button color="inherit" type="primary" onClick={login}>
             Sign in!
           </Button>
         </span>
