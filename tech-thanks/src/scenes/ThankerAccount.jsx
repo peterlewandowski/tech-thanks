@@ -45,10 +45,12 @@ useEffect(()=> {
         <Typography>Thanker's account</Typography>
 
         <ThankerDash />
-        <Fab variant="extended" onClick={() => navigate("/send")}>
-          <VolunteerActivismIcon sx={{ mr: 1 }} />
-          Navigate
-        </Fab>
+        <div>
+          <Fab variant="extended" onClick={() => navigate("/send")}>
+            <VolunteerActivismIcon sx={{ mr: 1 }} />
+            Give Thanks!
+          </Fab>
+        </div>
         <ThankerHistory />
         </>
       }
