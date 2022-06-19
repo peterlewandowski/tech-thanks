@@ -8,8 +8,6 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 import { getThisGiver } from "../services/givers";
 import {login, logout, get_greeting, set_greeting} from '../services/near/utils'
