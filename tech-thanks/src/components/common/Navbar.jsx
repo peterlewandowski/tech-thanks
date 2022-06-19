@@ -16,12 +16,6 @@ export default function Navbar({ isDark, setIsDark }) {
 
   const { user, setUser } = useContext(UserContext);
 
-  const handleLogout = () => {
-    // localStorage.removeItem("jwt");
-    setUser(null);
-    navigate("/");
-  };
-
   const handleMode = () => {
     setIsDark(!isDark);
   };
