@@ -20,7 +20,7 @@ export default function ThankerAccount() {
         <div>
           <Fab variant="extended" onClick={() => navigate("/send")}>
             <VolunteerActivismIcon sx={{ mr: 1 }} />
-            Navigate
+            Give Thanks!
           </Fab>
         </div>
         <ThankerHistory />
