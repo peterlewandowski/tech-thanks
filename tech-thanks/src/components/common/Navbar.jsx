@@ -19,16 +19,7 @@ export default function Navbar({ isDark, setIsDark }) {
 
   const { user, setUser } = useContext(UserContext);
 
-  const handleClickLogin = async () => {
-    console.log("handleClickLogin");
-    // from the blockchain signature find out who the address of this user is.
-    // fake it for now
-    const address = "1234";
-    const giverProfile = await getThisGiver(address);
-    console.log("giverProfile", giverProfile);
-    setUser(giverProfile);
-    navigate("/thanker");
-  };
+
 
   const handleLogout = () => {
     // localStorage.removeItem("jwt");
@@ -44,7 +35,7 @@ export default function Navbar({ isDark, setIsDark }) {
     if (window.walletConnection.isSignedIn()) {
       return (
         <span>
-          <Button color="inherit" onClick={() => navigate("/dashboard")}>
+          <Button color="inherit" onClick={() => navigate("/thanker")}>
             Dashboard
           </Button>
           <Button color="inherit" onClick={logout}>

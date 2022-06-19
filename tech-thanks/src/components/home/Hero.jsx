@@ -3,10 +3,13 @@ import "./hero.css";
 import Box from "@mui/material/Box";
 import Fab from "@mui/material/Fab";
 import ArrowCircleDownIcon from "@mui/icons-material/ArrowCircleDown";
+import {useNavigate} from 'react-router-dom';
 
 export default function Hero() {
+  const navigate = useNavigate()
   const handleGetStarted = () => {
-    document.getElementById("main").scrollIntoView({ behavior: "smooth" });
+   // document.getElementById("main").scrollIntoView({ behavior: "smooth" });
+   navigate("/thanker");
   };
   return (
     <>
