@@ -46,19 +46,19 @@ useEffect( () => {
             : ""
             }
             { user.thankcoins > 0 ? 
-            <div className={"startChoose "+ (starChosen > 0 ? "chosen" : "") } id="1"  onClick={handleStar}>🌟</div>
+            <div className={" "+ (starChosen > 0 ? "chosen" : "") } id="1"  onClick={handleStar}>🌟</div>
              : "" }
                         { user.thankcoins > 1 ? 
-            <div className={"startChoose "+ (starChosen > 1 ? "chosen" : "") } id="2"  onClick={handleStar}>🌟</div>
+            <div className={" "+ (starChosen > 1 ? "chosen" : "") } id="2"  onClick={handleStar}>🌟🌟</div>
              : "" }
                         { user.thankcoins > 2 ? 
-            <div className={"startChoose "+ (starChosen > 2 ? "chosen" : "") } id="3"  onClick={handleStar}>🌟</div>
+            <div className={" "+ (starChosen > 2 ? "chosen" : "") } id="3"  onClick={handleStar}>🌟🌟🌟</div>
              : "" }
                         { user.thankcoins > 3 ? 
-            <div className={"startChoose "+ (starChosen > 3 ? "chosen" : "") } id="4"  onClick={handleStar}>🌟</div>
+            <div className={" "+ (starChosen > 3 ? "chosen" : "") } id="4"  onClick={handleStar}>🌟🌟🌟🌟</div>
              : "" }
                         { user.thankcoins > 4 ? 
-            <div className={"startChoose "+ (starChosen > 4 ? "chosen" : "") } id="5"  onClick={handleStar}>🌟</div>
+            <div className={" "+ (starChosen > 4 ? "chosen" : "") } id="5"  onClick={handleStar}>🌟🌟🌟🌟🌟</div>
              : "" }
             </div>
             {
@@ -71,6 +71,8 @@ useEffect( () => {
                 : ""
            
             }
+
+            <
         </>
     );
 }
