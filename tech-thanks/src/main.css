@@ -17,12 +17,37 @@ body {
     display: flex;
     flex-wrap: wrap;
     padding-left: 0;
+    margin-left: 20px;
   }
 
   .startChoose {
-    flex: 0 0 20%;
+    flex: 0 0 19%;
     font-size:5em;
+    border: 1px white solid;
   }
   .startChoose:checked ~ .control-me::after {
     content: "😩";
+}
+
+ /* #starSelection:hover .startChoose {
+  background-color: red;
+  border: 1px black solid;
+}  */
+
+.startChoose:hover, .chosen{ 
+  background-color: green;
+  border: 1px black solid;
+}
+
+.startChoose:hover{ 
+  background-color:  yellow; 
+}
+
+
+#whowethank {
+  margin-bottom: 40px;
+}
+
+#urlToSend {
+  width:100%;
 }
