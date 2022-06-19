@@ -17,8 +17,7 @@ import getConfig from '../services/near/config'
 export default function Navbar({ isDark, setIsDark }) {
   const navigate = useNavigate();
 
-  const { user, setUser } = useContext(UserContext);
-
+  const { user,  setUser } = useContext(UserContext);
 
 
   const handleLogout = () => {
@@ -78,8 +77,8 @@ export default function Navbar({ isDark, setIsDark }) {
               TechThanks
             </Typography>
             <IconButton onClick={handleMode}>
-              {!isDark && <LightMode />}
-              {isDark && <DarkMode />}
+              {isDark && <LightMode />}
+              {!isDark && <DarkMode />}
             </IconButton>
             {navButtons()}
           </Toolbar>
