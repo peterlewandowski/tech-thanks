@@ -27,7 +27,7 @@ export default function MentorReceive() {
   <>
     <h2>You've been lucky enough to receive some ThankCoins! Type to cash them out!</h2>
     {verifiedEmail ? 
-             <div>this is{verifiedEmail} has been verified</div>
+             <div>This is {verifiedEmail} has been verified</div>
     :
         <div>
           We need the email the person that thanked you used:
