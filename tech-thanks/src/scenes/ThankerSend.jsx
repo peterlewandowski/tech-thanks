@@ -1,7 +1,7 @@
 import React, {useState,useContext, useEffect} from 'react';
 import { Input } from '@mui/material'; 
 import {UserContext} from "../components/context/UserContext"
-import {oneWayHash} from "../components/services/hash"
+import {oneWayHash,getDomain} from "../components/services/hash"
 
 const ThankerSend = () => {
     const {user,setUser} = useContext(UserContext);
@@ -11,24 +11,18 @@ const ThankerSend = () => {
     
 
 useEffect( () => {
-
-
     const getHash = async (passedEmail) =>  {
        oneWayHash(passedEmail).then(emailHashed => {
 
-        setUrl("https://techthanks.com/thanks/" +emailHashed );
+        setUrl(getDomain()+"/thanks/" +emailHashed );
        })
 
     }
     if (email && starChosen > 0 )  {
         getHash(email)
-    console.log("yeah")
     }
 
 },[email,starChosen])
-
-
-
 
 
     const handleStar = (star) => {

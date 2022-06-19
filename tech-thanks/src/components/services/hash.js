@@ -5,3 +5,12 @@ export const   oneWayHash = async (message) => {
   const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join(''); // convert bytes to hex string
   return hashHex;
 }
+
+export const getDomain = () => {
+   const domain = window.location.hostname;
+   if (domain == "localhost") {
+    return "http://localhost:3000"
+   } else {
+    return "https://" + window.location.hostname;
+   }
+}
