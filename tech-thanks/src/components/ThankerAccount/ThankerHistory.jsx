@@ -45,6 +45,7 @@ export default function ThankerHistory() {
           variant="h5"
           sx={{
             p: 1,
+            mt: 3,
             fontFamily: "monospace",
             fontWeight: 300,
             letterSpacing: ".3rem",
@@ -56,8 +57,7 @@ export default function ThankerHistory() {
           Your History
         </Typography>
         <Container maxWidth="sm">
-          <Typography></Typography>
-          <Box sx={{ height: 400, width: "100%" }}>
+          <Box sx={{ height: 350, width: "100%", mt: 2 }}>
             <DataGrid rows={rows} columns={columns} />
           </Box>
         </Container>
