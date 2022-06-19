@@ -44,7 +44,7 @@ export default function Navbar({ isDark, setIsDark }) {
     if (window.walletConnection.isSignedIn()) {
       return (
         <span>
-          <Button color="inherit" onClick={() => navigate("/dashboard")}>
+          <Button color="inherit" onClick={() => navigate("/thanker")}>
             Dashboard
           </Button>
           <Button color="inherit" onClick={logout}>

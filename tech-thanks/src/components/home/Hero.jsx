@@ -16,7 +16,7 @@ export default function Hero() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          height: 500,
+          height: 325,
         }}
       >
         <Fab
