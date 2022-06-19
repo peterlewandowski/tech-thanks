@@ -50,7 +50,7 @@ const handleDot = () => {
           <>Loading...</>
         ) : (
           <>
-            <Typography>Thanker's account</Typography>
+
 
             <ThankerDash />
             <div>

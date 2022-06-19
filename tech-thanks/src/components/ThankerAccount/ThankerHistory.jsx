@@ -40,9 +40,9 @@ export default function ThankerHistory() {
 
   return (
     <>
-      <Typography>Your History:</Typography>
-      {user.thankcoins}
+      
       <Container maxWidth="sm">
+      <Typography><b>Your History:</b></Typography>
         <Box sx={{ height: 400, width: "100%" }}>
           <DataGrid rows={rows} columns={columns} />
         </Box>
