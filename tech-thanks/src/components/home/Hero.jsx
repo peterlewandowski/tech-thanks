@@ -20,10 +20,11 @@ export default function Hero() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          height: 325,
+          height: 250,
         }}
       >
         <Typography
+        variant="h2"
           sx={{
             p: 3,
             fontFamily: "monospace",
@@ -32,7 +33,7 @@ export default function Hero() {
             color: "inherit",
           }}
         >
-          Thank your mentors.
+          Thank your mentors
         </Typography>
         <Fab
           variant="extended"

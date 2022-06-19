@@ -9,12 +9,17 @@ import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "regenerator-runtime/runtime";
 import { UserContext } from "../context/UserContext";
-import { login, logout } from "../services/near/utils";
+import { login, logout} from "../services/near/utils";
 
 export default function Navbar({ isDark, setIsDark }) {
   const navigate = useNavigate();
 
   const { user, setUser } = useContext(UserContext);
+
+ const handleLogout = (e) => {
+  logout();
+  navigate("/");
+ }
 
   const navButtons = () => {
     if (window.walletConnection.isSignedIn()) {
@@ -23,7 +28,7 @@ export default function Navbar({ isDark, setIsDark }) {
           <Button color="inherit" onClick={() => navigate("/thanker")}>
             Dashboard
           </Button>
-          <Button color="inherit" onClick={logout}>
+          <Button color="inherit" onClick={handleLogout()}>
             Sign Out
           </Button>
         </span>

@@ -61,7 +61,21 @@ export default function Leaderboard() {
   const [leaderboardItems, setLeaderboardItems] = useState([]);
 
   useEffect(() => {
-    getLeaderboardItems().then((data) => setLeaderboardItems(data));
+    //getLeaderboardItems().then((data) => setLeaderboardItems(data));
+  }, []);
+  
+  useEffect(() => {
+    const getLeader= async () => {
+      getLeaderboardItems()
+      .then(fullDB => {
+      //  console.log("fullDB",fullDB)
+        const db = JSON.parse(fullDB);
+        const leaderboard = db.leaderboard;
+        console.log("leaderboard",leaderboard)
+        setLeaderboardItems(leaderboard);
+      });
+    };
+    getLeader();
   }, []);
 
   const rows = leaderboardItems.map((item) => {

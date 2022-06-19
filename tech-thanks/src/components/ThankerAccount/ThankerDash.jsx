@@ -5,8 +5,7 @@ export default function ThankerDash () {
 const {user} = useContext(UserContext);
     return (
         <div>
-            <h4>Your ThankCoins:</h4>
-            {user.thankcoins}
+            <h4>Today you have {user.thankcoins} ThankCoins! WOO HOO!</h4>
         </div>
     );
 }
