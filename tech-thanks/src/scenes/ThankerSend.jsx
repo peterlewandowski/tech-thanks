@@ -1,4 +1,4 @@
-import { Container, Rating, TextField, Typography } from "@mui/material";
+import { Container, Link, Rating, TextField, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../components/context/UserContext";
@@ -63,10 +63,10 @@ const ThankerSend = () => {
       {url ? (
         <Box>
           <Typography variant="h6" textAlign="center">
-            You've chose to send {value} 🌟's to {email}
+            You've chose to send {value} to {email}
           </Typography>
           <b>
-            <a href={url}>{url}</a>
+            <Link href={url}>{url}</Link>
           </b>
         </Box>
       ) : (
