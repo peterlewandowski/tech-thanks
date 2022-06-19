@@ -3,13 +3,13 @@ import "./hero.css";
 import Box from "@mui/material/Box";
 import Fab from "@mui/material/Fab";
 import ArrowCircleDownIcon from "@mui/icons-material/ArrowCircleDown";
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+import { Typography } from "@mui/material";
 
 export default function Hero() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const handleGetStarted = () => {
-   // document.getElementById("main").scrollIntoView({ behavior: "smooth" });
-   navigate("/thanker");
+    navigate("/thanker");
   };
   return (
     <>
@@ -17,11 +17,24 @@ export default function Hero() {
         sx={{
           m: 1,
           display: "flex",
+          flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          height: 325,
+          height: 250,
         }}
       >
+        <Typography
+        variant="h2"
+          sx={{
+            p: 3,
+            fontFamily: "monospace",
+            fontWeight: 300,
+            letterSpacing: ".1rem",
+            color: "inherit",
+          }}
+        >
+          Thank your mentors
+        </Typography>
         <Fab
           variant="extended"
           size="medium"

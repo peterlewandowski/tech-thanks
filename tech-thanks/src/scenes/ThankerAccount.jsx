@@ -41,18 +41,19 @@ const handleDot = () => {
     <Container maxWidth="lg">
       <Box
         sx={{
+          m: 5,
+          p: 1,
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          alignContent: "center,",
+          alignContent: "center",
         }}
       >
         {!user.address ? (
           <>Loading...</>
         ) : (
           <>
-
-
+            <h3>Thanker's Account</h3>
             <ThankerDash />
             <div>
               <Fab variant="extended" onClick={() => navigate("/send")}>
@@ -65,7 +66,7 @@ const handleDot = () => {
         )}
       </Box>
     </Container>
-    <button onClick={()=> {handleDot()}}>_____</button>
+    <a href="#" onClick={()=> {handleDot()}}>___</a>
     </>
   );
 }
