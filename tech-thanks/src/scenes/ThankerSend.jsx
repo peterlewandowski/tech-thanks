@@ -71,8 +71,6 @@ useEffect( () => {
                 : ""
            
             }
-            <br /><br /><br /><br /><br />
-            <Link to="/thanker">Back to Dashboard</Link>
         </>
     );
 }
