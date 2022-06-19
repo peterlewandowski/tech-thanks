@@ -16,7 +16,6 @@ export default function Navbar({ isDark, setIsDark }) {
   const { user, setUser } = useContext(UserContext);
 
   const handleClickLogin = async () => {
-    console.log("handleClickLogin");
     // from the blockchain signature find out who the address of this user is.
     // fake it for now
     const address = "1234";
@@ -83,8 +82,8 @@ export default function Navbar({ isDark, setIsDark }) {
               TechThanks
             </Typography>
             <IconButton onClick={handleMode}>
-              {!isDark && <LightMode />}
-              {isDark && <DarkMode />}
+              {isDark && <LightMode />}
+              {!isDark && <DarkMode />}
             </IconButton>
             {navButtons(user.address)}
           </Toolbar>
