@@ -1,80 +1,79 @@
-import React, {useState,useContext, useEffect} from 'react';
-import { Input } from '@mui/material'; 
-import {UserContext} from "../components/context/UserContext"
-import {oneWayHash,getDomain} from "../components/services/hash"
-import { Link } from 'react-router-dom';
+import { Container, Link, Rating, TextField, Typography } from "@mui/material";
+import { Box } from "@mui/system";
+import { useContext, useEffect, useState } from "react";
+import { UserContext } from "../components/context/UserContext";
+import { getDomain, oneWayHash } from "../components/services/hash";
 
 const ThankerSend = () => {
-    const {user,setUser} = useContext(UserContext);
-    const [starChosen, setStarChosen] = useState(0)
-    const [email,setEmail] = useState("");
-    const [url,setUrl] = useState("")
-    
+  const { user, setUser } = useContext(UserContext);
+  const [starChosen, setStarChosen] = useState(0);
+  const [email, setEmail] = useState("");
+  const [url, setUrl] = useState("");
+  const [value, setValue] = useState("");
 
-useEffect( () => {
-    const getHash = async (passedEmail) =>  {
-       oneWayHash(passedEmail).then(emailHashed => {
-
-        setUrl(getDomain()+"/thanks/" +emailHashed );
-       })
-
-    }
-    if (email && starChosen > 0 )  {
-        getHash(email)
-    }
-
-},[email,starChosen])
-
-
-    const handleStar = (star) => {
-        setStarChosen(star.target.id);
+  useEffect(() => {
+    const getHash = async (passedEmail) => {
+      oneWayHash(passedEmail).then((emailHashed) => {
+        setUrl(getDomain() + "/thanks/" + emailHashed);
+      });
     };
+    if (email && value > 0) {
+      getHash(email);
+    }
+  }, [email, value]);
 
-    const handleEmail = (e) => {
-        setEmail(e.target.value);
-      }
-      
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+  };
 
+  return (
+    <Container
+      maxWidth="lg"
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        gap: 3,
+        mt: 3,
+      }}
+    >
+      <Typography variant="h4" fontWeight={700}>
+        Let's thank that Mentor that got you into tech
+      </Typography>
+      <Rating
+        name="simple-controlled"
+        value={value}
+        sx={{ fontSize: 70 }}
+        onChange={(event, newValue) => {
+          setValue(newValue);
+        }}
+      />
+      <Box sx={{ display: "flex", alignItems: "center", gap: 3 }}>
+        <Typography variant="h6">Who are we thanking?</Typography>
+        <TextField
+          variant="standard"
+          label="Their Email"
+          placeholder="todd@bocacode.com"
+          onChange={handleEmail}
+          sx={{ mb: 2 }}
+        />
+      </Box>
 
-    return (
-        <>
-            <h2>Let's thank that Mentor that got you into tech</h2>
-            <div id="whowethank">Who are we thanking:    <Input placeholder="Their email" onChange={handleEmail}  /></div>
-            <div id="starSelection">
-            { user.thankcoins  == 0 ? 
-                <div>No stars to give today. wait until tomorrow</div>
-            : ""
-            }
-            { user.thankcoins > 0 ? 
-            <div className={" "+ (starChosen > 0 ? "chosen" : "") } id="1"  onClick={handleStar}>🌟</div>
-             : "" }
-                        { user.thankcoins > 1 ? 
-            <div className={" "+ (starChosen > 1 ? "chosen" : "") } id="2"  onClick={handleStar}>🌟🌟</div>
-             : "" }
-                        { user.thankcoins > 2 ? 
-            <div className={" "+ (starChosen > 2 ? "chosen" : "") } id="3"  onClick={handleStar}>🌟🌟🌟</div>
-             : "" }
-                        { user.thankcoins > 3 ? 
-            <div className={" "+ (starChosen > 3 ? "chosen" : "") } id="4"  onClick={handleStar}>🌟🌟🌟🌟</div>
-             : "" }
-                        { user.thankcoins > 4 ? 
-            <div className={" "+ (starChosen > 4 ? "chosen" : "") } id="5"  onClick={handleStar}>🌟🌟🌟🌟🌟</div>
-             : "" }
-            </div>
-            {
-                url  ? 
-                <div> 
-                    You've chose to send  {starChosen} 🌟's to {email}<br />
-                    <b><a href={url}>{url}</a></b>
-
-                </div> 
-                : ""
-           
-            }
-
-            
-        </>
-    );
-}
+      {url ? (
+        <Box>
+          <Typography variant="h6" textAlign="center">
+            You've chose to send {value} to {email}
+          </Typography>
+          <b>
+            <Link href={url}>{url}</Link>
+          </b>
+        </Box>
+      ) : (
+        ""
+      )}
+    </Container>
+  );
+};
 
 export default ThankerSend;

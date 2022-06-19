@@ -21,44 +21,43 @@ code {
     monospace;
 }
 
-  #starSelection {
-    display: flex;
-    flex-wrap: wrap;
-    padding-left: 0;
-    margin-left: 20px;
-    margin-bottom: 100px;
-  }
-
-  .startChoose {
-    flex: 0 0 19%;
-    font-size:5em;
-    border: 1px white solid;
-  }
-  .startChoose:checked ~ .control-me::after {
-    content: "😩";
+#starSelection {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-left: 20px;
+  margin-bottom: 100px;
 }
 
- /* #starSelection:hover .startChoose {
+.startChoose {
+  flex: 0 0 19%;
+  font-size: 5em;
+  border: 1px white solid;
+  cursor: pointer;
+}
+.startChoose:checked ~ .control-me::after {
+  content: "😩";
+}
+
+/* #starSelection:hover .startChoose {
   background-color: red;
   border: 1px black solid;
 }  */
 
-.startChoose:hover, .chosen{ 
+.startChoose:hover,
+.chosen {
   background-color: green;
   border: 1px black solid;
 }
 
-.startChoose:hover{ 
-  background-color:  yellow; 
+.startChoose:hover {
+  background-color: yellow;
 }
-
 
 #whowethank {
   margin-bottom: 40px;
 }
 
 #urlToSend {
-  width:100%;
+  width: 100%;
 }
-
-z
