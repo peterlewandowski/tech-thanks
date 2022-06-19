@@ -56,9 +56,7 @@ export default function ThankerHistory() {
           Your History
         </Typography>
         <Container maxWidth="sm">
-          <Typography>
-            <b>Your History:</b>
-          </Typography>
+          <Typography></Typography>
           <Box sx={{ height: 400, width: "100%" }}>
             <DataGrid rows={rows} columns={columns} />
           </Box>
