@@ -1,3 +1,6 @@
+import 'regenerator-runtime/runtime'
+import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { DarkMode, LightMode } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
@@ -5,10 +8,11 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 import { getThisGiver } from "../services/givers";
+import {login, logout, get_greeting, set_greeting} from '../services/near/utils'
+import getConfig from '../services/near/config'
+
 
 export default function Navbar({ isDark, setIsDark }) {
   const navigate = useNavigate();
@@ -35,14 +39,14 @@ export default function Navbar({ isDark, setIsDark }) {
     setIsDark(!isDark);
   };
 
-  const navButtons = (condition) => {
-    if (condition) {
+  const navButtons = () => {
+    if (window.walletConnection.isSignedIn()) {
       return (
         <span>
           <Button color="inherit" onClick={() => navigate("/dashboard")}>
             Dashboard
           </Button>
-          <Button color="inherit" onClick={handleLogout}>
+          <Button color="inherit" onClick={logout}>
             Sign Out
           </Button>
         </span>
@@ -50,7 +54,7 @@ export default function Navbar({ isDark, setIsDark }) {
     } else {
       return (
         <span>
-          <Button color="inherit" type="primary" onClick={handleClickLogin}>
+          <Button color="inherit" type="primary" onClick={login}>
             Sign in!
           </Button>
         </span>
@@ -85,7 +89,7 @@ export default function Navbar({ isDark, setIsDark }) {
               {isDark && <LightMode />}
               {!isDark && <DarkMode />}
             </IconButton>
-            {navButtons(user.address)}
+            {navButtons()}
           </Toolbar>
         </AppBar>
       </Box>

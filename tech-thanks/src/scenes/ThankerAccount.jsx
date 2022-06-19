@@ -23,10 +23,12 @@ export default function ThankerAccount() {
         <Typography>Thanker's account</Typography>
         Your Address: {user.address}
         <ThankerDash />
-        <Fab variant="extended" onClick={() => navigate("/send")}>
-          <VolunteerActivismIcon sx={{ mr: 1 }} />
-          Navigate
-        </Fab>
+        <div>
+          <Fab variant="extended" onClick={() => navigate("/send")}>
+            <VolunteerActivismIcon sx={{ mr: 1 }} />
+            Give Thanks!
+          </Fab>
+        </div>
         <ThankerHistory />
       </Box>
     </Container>
