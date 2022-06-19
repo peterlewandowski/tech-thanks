@@ -6,7 +6,7 @@
         {"id": 4, "name": "todd albert","email": "todd@bocacode.com","thankcoins": 54}
     ],
     "givers": [
-        {"id": 1, "address": "1234", "thankcoins": 5, "history": [{"id":1","title": "Gave to Todd Alber", "amount": 10, "date": "1/2/2022"},{"id":1,"title": "Gave to Nikki ", "amount": 5, "date": "3/23/2022"},{"id":1,"title": "Gave to Zack", "amount": 13, "date": "422/2022"}]},
+        {"id": 1, "address": "1234", "thankcoins": 5, "history": [{"id":1,"title": "Gave to Todd Alber", "amount": 10, "date": "1/2/2022"},{"id":1,"title": "Gave to Nikki ", "amount": 5, "date": "3/23/2022"},{"id":1,"title": "Gave to Zack", "amount": 13, "date": "422/2022"}]},
         {"id": 2, "address": "3333", "thankcoins": 5, "history": [{"id":1,"title": "Gave to Todd Alber", "amount": 10, "date": "1/2/2022"},{"id":1,"title": "Gave to Nikki ", "amount": 5, "date": "3/23/2022"},{"id":1,"title": "Gave to Zack", "amount": 13, "date": "422/2022"}]},
         {"id": 3,  "address": "4444", "thankcoins": 5, "history": [{"id":1,"title": "Gave to Todd Alber", "amount": 10, "date": "1/2/2022"},{"id":1,"title": "Gave to Nikki ", "amount": 5, "date": "3/23/2022"},{"id":1,"title": "Gave to Zack", "amount": 13, "date": "422/2022"}]}
     ],
