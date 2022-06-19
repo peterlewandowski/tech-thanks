@@ -26,18 +26,19 @@ export default function ThankerAccount() {
     <Container maxWidth="lg">
       <Box
         sx={{
+          m: 5,
+          p: 1,
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          alignContent: "center,",
+          alignContent: "center",
         }}
       >
         {!user.address ? (
           <>Loading...</>
         ) : (
           <>
-            <Typography>Thanker's account</Typography>
-
+            <h3>Thanker's Account</h3>
             <ThankerDash />
             <div>
               <Fab variant="extended" onClick={() => navigate("/send")}>

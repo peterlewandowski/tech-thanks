@@ -92,6 +92,7 @@ export default function Leaderboard() {
             Leaderboard
           </Typography>
           <StripedDataGrid
+            sx={{ color: "#000" }}
             rows={rows}
             columns={columns}
             getRowClassName={(params) =>

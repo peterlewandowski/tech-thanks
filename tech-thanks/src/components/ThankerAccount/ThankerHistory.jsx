@@ -39,14 +39,24 @@ export default function ThankerHistory() {
   });
 
   return (
-    <>
-      <Typography>Your History:</Typography>
-      {user.thankcoins}
+    <><Box>
+        <Typography
+            variant="h5"
+            sx={{
+              p: 1,
+              fontFamily: "monospace",
+              fontWeight: 300,
+              letterSpacing: ".3rem",
+              color: "inherit",
+              textDecoration: "none",
+              textAlign: "center",
+            }}>Your History</Typography>
       <Container maxWidth="sm">
         <Box sx={{ height: 400, width: "100%" }}>
           <DataGrid rows={rows} columns={columns} />
         </Box>
       </Container>
+    </Box>
     </>
   );
 }
