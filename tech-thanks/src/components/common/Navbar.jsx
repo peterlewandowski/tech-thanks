@@ -6,7 +6,7 @@ import Button from "@mui/material/Button";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "regenerator-runtime/runtime";
 import { UserContext } from "../context/UserContext";
 import { login, logout } from "../services/near/utils";
@@ -54,25 +54,21 @@ export default function Navbar({ isDark, setIsDark }) {
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static">
           <Toolbar>
-            <Typography
-              variant="h6"
-              noWrap
-              component="Link"
-              href="/"
-              sx={{
-                flexGrow: 1,
-                mr: 2,
-                display: { md: "flex" },
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
-              }}
-            >
-              TechThanks
-            </Typography>
-            <IconButton onClick={handleMode}>
+            <IconButton component={Link} to="/" sx={{ flexGrow: 1 }}>
+              <Typography
+                variant="h6"
+                sx={{
+                  flexGrow: 1,
+                  display: { md: "flex" },
+                  fontFamily: "monospace",
+                  fontWeight: 700,
+                  letterSpacing: ".3rem",
+                }}
+              >
+                TechThanks
+              </Typography>
+            </IconButton>
+            <IconButton onClick={handleMode} sx={{ flexShrink: 0 }}>
               {isDark && <LightMode />}
               {!isDark && <DarkMode />}
             </IconButton>
