@@ -1,8 +1,8 @@
-import { Typography } from "@mui/material";
-import { useContext, useEffect, useState } from "react";
-import { UserContext } from "../context/UserContext";
+import { Container, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import { DataGrid } from "@mui/x-data-grid";
+import { useContext, useEffect, useState } from "react";
+import { UserContext } from "../context/UserContext";
 
 const columns = [
   { field: "id", headerName: "#", width: 90 },
@@ -29,13 +29,14 @@ export default function ThankerHistory() {
     setHistoryItems(user.history);
   }, []);
 
-  const rows = historyItems.map(item => {
+  const rows = historyItems.map((item) => {
     return {
-        id: item.id,
-        date: item.date,
-        amount: item.amount,
-        title: item.title,
-    }});
+      id: item.id,
+      date: item.date,
+      amount: item.amount,
+      title: item.title,
+    };
+  });
 
   return (
     <>
@@ -46,6 +47,6 @@ export default function ThankerHistory() {
           <DataGrid rows={rows} columns={columns} />
         </Box>
       </Container>
-  </>
+    </>
   );
 }
