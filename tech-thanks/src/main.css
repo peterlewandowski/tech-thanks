@@ -1,0 +1,61 @@
+/* normalizing css */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+  #starSelection {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-left: 20px;
+  }
+
+  .startChoose {
+    flex: 0 0 19%;
+    font-size:5em;
+    border: 1px white solid;
+  }
+  .startChoose:checked ~ .control-me::after {
+    content: "😩";
+}
+
+ /* #starSelection:hover .startChoose {
+  background-color: red;
+  border: 1px black solid;
+}  */
+
+.startChoose:hover, .chosen{ 
+  background-color: green;
+  border: 1px black solid;
+}
+
+.startChoose:hover{ 
+  background-color:  yellow; 
+}
+
+
+#whowethank {
+  margin-bottom: 40px;
+}
+
+#urlToSend {
+  width:100%;
+}
