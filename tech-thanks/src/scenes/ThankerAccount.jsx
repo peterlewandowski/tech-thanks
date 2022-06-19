@@ -65,7 +65,7 @@ const handleDot = () => {
         )}
       </Box>
     </Container>
-    <button onClick={()=> {handleDot()}}>_____</button>
+    <a href="#" onClick={()=> {handleDot()}}>___</a>
     </>
   );
 }
