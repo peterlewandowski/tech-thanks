@@ -1,5 +1,5 @@
 import { Container } from "@mui/material";
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../context/UserContext";
 import HistoryItem from "./HistoryItem";
 
