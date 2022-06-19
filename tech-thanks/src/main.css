@@ -26,6 +26,7 @@ code {
     flex-wrap: wrap;
     padding-left: 0;
     margin-left: 20px;
+    margin-bottom: 100px;
   }
 
   .startChoose {
@@ -59,3 +60,5 @@ code {
 #urlToSend {
   width:100%;
 }
+
+z
