@@ -1,4 +1,4 @@
-import { Container } from "@mui/material";
+import { Typography } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../context/UserContext";
 import HistoryItem from "./HistoryItem";
@@ -17,10 +17,10 @@ export default function ThankerHistory() {
   });
 
   return (
-    <div>
-      <h3>Your History:</h3>
+    <>
+      <Typography>Your History:</Typography>
       {user.thankcoins}
-      <Container maxWidth="sm">{historyElements}</Container>
-    </div>
+      {historyElements}
+    </>
   );
 }

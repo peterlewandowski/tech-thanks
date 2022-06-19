@@ -1,20 +1,22 @@
 import 'regenerator-runtime/runtime'
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { DarkMode, LightMode } from "@mui/icons-material";
+import { IconButton } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 import { getThisGiver } from "../services/givers";
 import {login, logout, get_greeting, set_greeting} from '../services/near/utils'
 import getConfig from '../services/near/config'
 
 
-export default function Navbar() {
+export default function Navbar({ isDark, setIsDark }) {
   const navigate = useNavigate();
 
   const { user, setUser } = useContext(UserContext);
@@ -34,6 +36,10 @@ export default function Navbar() {
     // localStorage.removeItem("jwt");
     setUser(null);
     navigate("/");
+  };
+
+  const handleMode = () => {
+    setIsDark(!isDark);
   };
 
   const navButtons = (condition) => {
@@ -82,6 +88,10 @@ export default function Navbar() {
             >
               TechThanks
             </Typography>
+            <IconButton onClick={handleMode}>
+              {!isDark && <LightMode />}
+              {isDark && <DarkMode />}
+            </IconButton>
             {navButtons(user.address)}
           </Toolbar>
         </AppBar>
