@@ -1,0 +1,18 @@
+{
+    "leaderboard": [
+        {"id": 1, "name": "todd albert","email": "todd@bocacode.com","thankcoins": 54},
+        {"id": 2, "name": "nikki ","email": "todd@bocacode.com","thankcoins": 54},
+        {"id": 3, "name": "todd albert","email": "todd@bocacode.com","thankcoins": 54},
+        {"id": 4, "name": "todd albert","email": "todd@bocacode.com","thankcoins": 54}
+    ],
+    "givers": [
+        {"id": 1, "address": "1234", "thankcoins": 5, "history": [{"id":1,"title": "Gave to Todd Alber", "amount": 10, "date": "1/2/2022"},{"id":2,"title": "Gave to Nikki ", "amount": 5, "date": "3/23/2022"},{"id":3,"title": "Gave to Zack", "amount": 13, "date": "422/2022"}]},
+        {"id": 2, "address": "3333", "thankcoins": 5, "history": [{"id":4,"title": "Gave to Todd Alber", "amount": 10, "date": "1/2/2022"},{"id":5,"title": "Gave to Nikki ", "amount": 5, "date": "3/23/2022"},{"id":6,"title": "Gave to Zack", "amount": 13, "date": "422/2022"}]},
+        {"id": 3,  "address": "4444", "thankcoins": 5, "history": [{"id":7,"title": "Gave to Todd Alber", "amount": 10, "date": "1/2/2022"},{"id":8,"title": "Gave to Nikki ", "amount": 5, "date": "3/23/2022"},{"id":9,"title": "Gave to Zack", "amount": 13, "date": "422/2022"}]}
+    ],
+    "videos": [
+        {"id": 1, "title": "deploying on react ", "url": "https://www.youtube.com/watch?v=e-IfT5CI-Gw"},
+        {"id": 2, "title": "How to mint on near", "url": "https://www.youtube.com/watch?v=Rt_cmIq12lo"},
+        {"id": 3, "title": "near 101 ", "url": "https://youtu.be/m6LJUpPPHoE?t=2365"}
+    ]
+}

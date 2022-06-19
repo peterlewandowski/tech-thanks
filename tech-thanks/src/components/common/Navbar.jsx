@@ -9,7 +9,7 @@ import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "regenerator-runtime/runtime";
 import { UserContext } from "../context/UserContext";
-import { login, logout } from "../services/near/utils";
+import { login, logout} from "../services/near/utils";
 
 export default function Navbar({ isDark, setIsDark }) {
   const navigate = useNavigate();
