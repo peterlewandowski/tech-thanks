@@ -16,6 +16,11 @@ export default function Navbar({ isDark, setIsDark }) {
 
   const { user, setUser } = useContext(UserContext);
 
+ const handleLogout = (e) => {
+  logout();
+  navigate("/");
+ }
+
   const navButtons = () => {
     if (window.walletConnection.isSignedIn()) {
       return (
@@ -23,7 +28,7 @@ export default function Navbar({ isDark, setIsDark }) {
           <Button color="inherit" onClick={() => navigate("/thanker")}>
             Dashboard
           </Button>
-          <Button color="inherit" onClick={logout}>
+          <Button color="inherit" onClick={handleLogout()}>
             Sign Out
           </Button>
         </span>

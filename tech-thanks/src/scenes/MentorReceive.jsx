@@ -7,6 +7,7 @@ import VolunteerActivismIcon from "@mui/icons-material/VolunteerActivism";
 import { Box, Container, Fab, Typography } from "@mui/material";
 import { login, logout } from "../components/services/near/utils";
 import { Link, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function MentorReceive() {
   const navigate = useNavigate()
@@ -15,9 +16,11 @@ export default function MentorReceive() {
   const [typedEmail, setTypedEmail] = useState("");
   let { hash } = useParams();
 
+  useEffect(()=> {
   if (window.walletConnection.isSignedIn()) {
     navigate("/store");
   }
+},[]);
 
   const handleLogin = (e) => {
     console.log("handleLogin");
