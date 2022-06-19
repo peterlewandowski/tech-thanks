@@ -16,20 +16,12 @@ export default function Navbar({ isDark, setIsDark }) {
 
   const { user, setUser } = useContext(UserContext);
 
-  const handleMode = () => {
-    setIsDark(!isDark);
-  };
-
   const navButtons = () => {
     if (window.walletConnection.isSignedIn()) {
       return (
         <span>
-          <Button color="inherit" onClick={() => navigate("/thanker")}>
-            Dashboard
-          </Button>
-          <Button color="inherit" onClick={logout}>
-            Sign Out
-          </Button>
+          <Button onClick={() => navigate("/thanker")}>Dashboard</Button>
+          <Button onClick={logout}>Sign Out</Button>
         </span>
       );
     } else {
@@ -62,7 +54,10 @@ export default function Navbar({ isDark, setIsDark }) {
                 TechThanks
               </Typography>
             </IconButton>
-            <IconButton onClick={handleMode} sx={{ flexShrink: 0 }}>
+            <IconButton
+              onClick={() => setIsDark(!isDark)}
+              sx={{ flexShrink: 0 }}
+            >
               {isDark && <LightMode />}
               {!isDark && <DarkMode />}
             </IconButton>
