@@ -14,7 +14,7 @@ import { login, logout} from "../services/near/utils";
 export default function Navbar({ isDark, setIsDark }) {
   const navigate = useNavigate();
 
- const handleLogout = (e) => {
+ const handleLogout = () => {
   logout();
   navigate("/");
  }
@@ -26,7 +26,7 @@ export default function Navbar({ isDark, setIsDark }) {
           <Button color="inherit" onClick={() => navigate("/thanker")}>
             Dashboard
           </Button>
-          <Button color="inherit" onClick={handleLogout()}>
+          <Button color="inherit" onClick={handleLogout}>
             Sign Out
           </Button>
         </span>
