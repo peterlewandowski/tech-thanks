@@ -1,6 +1,3 @@
-import 'regenerator-runtime/runtime'
-import React, { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { DarkMode, LightMode } from "@mui/icons-material";
 import { IconButton } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
@@ -8,17 +5,16 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import "regenerator-runtime/runtime";
 import { UserContext } from "../context/UserContext";
-import { getThisGiver } from "../services/givers";
-import {login, logout, get_greeting, set_greeting} from '../services/near/utils'
-import getConfig from '../services/near/config'
-
+import { login, logout } from "../services/near/utils";
 
 export default function Navbar({ isDark, setIsDark }) {
   const navigate = useNavigate();
 
-  const { user,  setUser } = useContext(UserContext);
-
+  const { user, setUser } = useContext(UserContext);
 
   const handleLogout = () => {
     // localStorage.removeItem("jwt");
@@ -61,7 +57,7 @@ export default function Navbar({ isDark, setIsDark }) {
             <Typography
               variant="h6"
               noWrap
-              component="a"
+              component="Link"
               href="/"
               sx={{
                 flexGrow: 1,
