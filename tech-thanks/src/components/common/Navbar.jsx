@@ -20,8 +20,12 @@ export default function Navbar({ isDark, setIsDark }) {
     if (window.walletConnection.isSignedIn()) {
       return (
         <span>
-          <Button onClick={() => navigate("/thanker")}>Dashboard</Button>
-          <Button onClick={logout}>Sign Out</Button>
+          <Button color="inherit" onClick={() => navigate("/thanker")}>
+            Dashboard
+          </Button>
+          <Button color="inherit" onClick={logout}>
+            Sign Out
+          </Button>
         </span>
       );
     } else {
