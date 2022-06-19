@@ -40,14 +40,14 @@ export default function Navbar({ isDark, setIsDark }) {
     setIsDark(!isDark);
   };
 
-  const navButtons = (condition) => {
-    if (condition) {
+  const navButtons = () => {
+    if (window.walletConnection.isSignedIn()) {
       return (
         <span>
           <Button color="inherit" onClick={() => navigate("/dashboard")}>
             Dashboard
           </Button>
-          <Button color="inherit" onClick={handleLogout}>
+          <Button color="inherit" onClick={logout}>
             Sign Out
           </Button>
         </span>
@@ -90,7 +90,7 @@ export default function Navbar({ isDark, setIsDark }) {
               {!isDark && <LightMode />}
               {isDark && <DarkMode />}
             </IconButton>
-            {navButtons(user.address)}
+            {navButtons()}
           </Toolbar>
         </AppBar>
       </Box>
