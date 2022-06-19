@@ -14,8 +14,6 @@ import { login, logout} from "../services/near/utils";
 export default function Navbar({ isDark, setIsDark }) {
   const navigate = useNavigate();
 
-  const { user, setUser } = useContext(UserContext);
-
  const handleLogout = (e) => {
   logout();
   navigate("/");

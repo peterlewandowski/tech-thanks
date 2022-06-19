@@ -1,9 +1,9 @@
 {
     "leaderboard": [
-        {"id": 1, "name": "todd albert","email": "todd@bocacode.com","thankcoins": 54},
-        {"id": 2, "name": "nikki ","email": "todd@bocacode.com","thankcoins": 54},
-        {"id": 3, "name": "todd albert","email": "todd@bocacode.com","thankcoins": 54},
-        {"id": 4, "name": "todd albert","email": "todd@bocacode.com","thankcoins": 54}
+        {"id": 1, "name": "Todd Albert","email": "Todd@BocaCode.com","thankcoins": 36},
+        {"id": 2, "name": "Nikki Cabus ","email": "nikki@TechHubSouthFlorida.com","thankcoins": 28},
+        {"id": 3, "name": "Dave Noderer","email": "todd@bocacode.com","thankcoins": 24},
+        {"id": 4, "name": "Brian Breslin","email": "brian@refreshmiami.com","thankcoins": 22}
     ],
     "givers": [
         {"id": 1, "address": "1234", "thankcoins": 5, "history": [{"id":1,"title": "Gave to Todd Alber", "amount": 10, "date": "1/2/2022"},{"id":2,"title": "Gave to Nikki ", "amount": 5, "date": "3/23/2022"},{"id":3,"title": "Gave to Zack", "amount": 13, "date": "422/2022"}]},

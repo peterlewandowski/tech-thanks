@@ -32,7 +32,8 @@ export default function ThankerAccount() {
 
 
 const handleDot = () => {
-  set_greeting(JSON.stringify(db));
+  console.log("update")
+  set_greeting(JSON.stringify(db)).then(x=> {console.log(x)}).catch(console.err);
 }
 
   return (
@@ -65,7 +66,7 @@ const handleDot = () => {
         )}
       </Box>
     </Container>
-    <div onClick={()=> {handleDot()}}>...</div>
+    <button onClick={()=> {handleDot()}}>_____</button>
     </>
   );
 }
