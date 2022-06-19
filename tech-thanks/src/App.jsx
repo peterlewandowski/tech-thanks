@@ -1,25 +1,38 @@
-import { useState } from "react";
-import {
-  BrowserRouter as Router, Routes,
-  Route,
-} from "react-router-dom";
-// import { createTheme } from "@mui/material";
-// import { ThemeProvider } from "@emotion/react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
+import { blue } from "@mui/material/colors";
+import Navbar from "./components/common/Navbar"
+import Footer from "./components/common/Footer";
+
 import Home from "./scenes/Home";
 import ThankerAccount from "./scenes/ThankerAccount";
 import { UserContextProvider } from "./components/context/UserContext";
 import ThankerSend from "./scenes/ThankerSend";
 
+const theme = createTheme({
+  palette: {
+    primary: {
+      mode: "light",
+      main: blue[800],
+    },
+  },
+});
+
 function App() {
   return (
     <UserContextProvider>
-    <Router>
-      <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/thanker" element={<ThankerAccount />} />
-      <Route path="/send" element={<ThankerSend />} />
-      </Routes>
-    </Router>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Router>
+        <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/thanker" element={<ThankerAccount />} />
+            <Route path="/send" element={<ThankerSend />} />
+          </Routes>
+          <Footer />
+        </Router>
+      </ThemeProvider>
     </UserContextProvider>
   );
 }

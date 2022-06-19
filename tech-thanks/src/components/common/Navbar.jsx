@@ -1,63 +1,55 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import AppBar from "@mui/material/AppBar";
-// import Box from "@mui/material/Box";
-// import Toolbar from "@mui/material/Toolbar";
-// import Typography from "@mui/material/Typography";
-// import Button from "@mui/material/Button";
-// import IconButton from "@mui/material/IconButton";
-// import LogoImage
-// import Menu from "@mui/material/Menu";
-// import MenuItem from "@mui/material/MenuItem";
-// import MenuIcon from "@mui/icons-material/Menu";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
 import { UserContext } from "../context/UserContext";
 import { getThisGiver } from "../services/givers";
 
 export default function Navbar() {
   const navigate = useNavigate();
-  
+
   const { user, setUser } = useContext(UserContext);
 
-  const [anchorEl, setAnchorEl] = useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
   const handleClickLogin = async () => {
-console.log("handleClickLogin")
-  // from the blockchain signature find out who the address of this user is. 
-  // fake it for now
-  const address = "1234";
-  const giverProfile =  await getThisGiver(address);
-  console.log("giverProfile",giverProfile)
-  setUser(giverProfile)
+    console.log("handleClickLogin");
+    // from the blockchain signature find out who the address of this user is.
+    // fake it for now
+    const address = "1234";
+    const giverProfile = await getThisGiver(address);
+    console.log("giverProfile", giverProfile);
+    setUser(giverProfile);
     navigate("/thanker");
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("jwt");
+    // localStorage.removeItem("jwt");
     setUser(null);
-    setAnchorEl(null);
+    navigate("/");
   };
 
   const navButtons = (condition) => {
     if (condition) {
       return (
         <span>
-          <button onClick={() => navigate("/dashboard")}>Dashboard</button>
-          <button onClick={handleLogout}>Sign Out</button>
+          <Button color="inherit" onClick={() => navigate("/dashboard")}>
+            Dashboard
+          </Button>
+          <Button color="inherit" onClick={handleLogout}>
+            Sign Out
+          </Button>
         </span>
       );
     } else {
       return (
         <span>
-          <button type="primary" onClick={handleClickLogin}>
+          <Button color="inherit" type="primary" onClick={handleClickLogin}>
             Sign in!
-          </button>
+          </Button>
         </span>
       );
     }
@@ -65,26 +57,31 @@ console.log("handleClickLogin")
 
   return (
     <>
-      <nav
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-        }}
-      >
-        <div>
-          <div>LOGO</div>
-          <img
-            style={{
-              width: "25%",
-            }}
-            // src={LogoImage}
-            onClick={() => navigate("/")}
-            alt=""
-          />
-        </div>
-        <div>{navButtons(user.address)}</div>
-      </nav>
+      <Box sx={{ flexGrow: 1 }}>
+        <AppBar position="static">
+          <Toolbar>
+            <Typography
+              variant="h6"
+              noWrap
+              component="a"
+              href="/"
+              sx={{
+                flexGrow: 1,
+                mr: 2,
+                display: { md: "flex" },
+                fontFamily: "monospace",
+                fontWeight: 700,
+                letterSpacing: ".3rem",
+                color: "inherit",
+                textDecoration: "none",
+              }}
+            >
+              TechThanks
+            </Typography>
+            {navButtons(user.address)}
+          </Toolbar>
+        </AppBar>
+      </Box>
     </>
   );
 }
