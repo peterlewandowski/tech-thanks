@@ -31,7 +31,7 @@ function App() {
             <Route path="/thanker" element={<ThankerAccount />} />
             <Route path="/send" element={<ThankerSend />} />
             <Route path="/thanks/:hash" element={<MentorReceive />} />
-            <Route path="/thanks/:hash" element={<Store />} />
+            <Route path="/store" element={<Store />} />
           </Routes>
           <Footer />
         </Router>
