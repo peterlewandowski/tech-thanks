@@ -6,12 +6,18 @@ import { oneWayHash } from "../components/services/hash";
 import VolunteerActivismIcon from "@mui/icons-material/VolunteerActivism";
 import { Box, Container, Fab, Typography } from "@mui/material";
 import { login, logout } from "../components/services/near/utils";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function MentorReceive() {
+  const navigate = useNavigate()
   const { user, setUser } = useContext(UserContext);
   const [verifiedEmail, setverifiedEmaill] = useState("");
   const [typedEmail, setTypedEmail] = useState("");
   let { hash } = useParams();
+
+  if (window.walletConnection.isSignedIn()) {
+    navigate("/store");
+  }
 
   const handleLogin = (e) => {
     console.log("handleLogin");
